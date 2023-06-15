@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    margin: 0;
+}
+#selected {
+    width: 240px;
+    /* background-color: cyan; */
+    margin-top: 10px;
+}
+
+#answer {
+    width: 240px;
+    /* background-color: yellow; */
+    margin-top: 10px; 
+    display: none;
+}
+#choicesNatural {
+    width: 240px;
+    /* background-color: green; */
+    margin: 0 auto;
+}
+#choicesSharp {
+    width: 240px;
+    /* background-color: green; */
+    margin: 0 auto;
+}
+#choicesFlat {
+    width: 240px;
+    /* background-color: green; */
+    margin: 0 auto;
+}
