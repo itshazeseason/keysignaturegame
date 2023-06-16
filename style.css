@@ -9,11 +9,14 @@ h3 {
 }
 #selected {
     width: 240px;
+    margin: auto;
     /* background-color: cyan; */
     margin-top: 10px;
 }
 
+
 #answer {
+    margin: auto;
     width: 240px;
     /* background-color: yellow; */
     margin-top: 10px; 
