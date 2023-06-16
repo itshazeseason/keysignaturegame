@@ -41,6 +41,23 @@ const answerKey = {
 
 window.onload = function() {
     randomQuestion();
+    // vex flow example
+    console.log("VexFlow Build:", Vex.Flow.BUILD);
+
+    const { Factory } = Vex.Flow;
+
+    const factory = new Factory({
+        renderer: { elementId: "test-vexflow", width: 500, height: 200 },
+    });
+    const score = factory.EasyScore();
+    factory
+        .System()
+        .addStave({
+            voices: [score.voice(score.notes("C#5/q, B4, A4, G#4", { stem: "up" })), score.voice(score.notes("C#4/h, C#4", { stem: "down" }))],
+        })
+        .addClef("treble")
+        .addTimeSignature("4/4");
+    factory.draw();
 }
 
 function selectKeySig(clicked_id){
@@ -90,3 +107,4 @@ function showAnswer(){
     document.getElementById("submit").innerHTML = "Next";
     answerState = "shown";
 }
+
