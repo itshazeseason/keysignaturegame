@@ -1,11 +1,12 @@
 var score = 0;
 var totalTries = 0;
-var currentChoice;
-var currentQuestion;
-var currentAnswer;
+var currentChoice = "0n";
+var currentQuestion= "0n";
+var currentAnswer = "0n";
 var answerState = "reset";
 // vexflow constants
 const { Renderer, Stave } = Vex.Flow;
+var clef = "treble";
 // variables for user
 var userGroup;
 var userStave;
@@ -82,6 +83,16 @@ function selectKeySig(clicked_id) {
   currentChoice = clicked_id;
 }
 
+function changeClef(change_clef) {
+  console.log(change_clef);
+  clef = change_clef
+  //rerender answer
+  renderAnswerKeySignature(keyToVex[currentAnswer]);
+  //rerender current select
+  console.log(`currentChoice: ${currentChoice}`);
+  renderUserKeySignature(keyToVex[currentChoice]);
+}
+
 function randomQuestion() {
   document.getElementById("answer").style.display = "none";
   const questionLst = Object.keys(answerKey);
@@ -133,7 +144,7 @@ function showAnswer() {
 //   context.svg.removeChild(group);
 //   // create new staff
 //   group = context.openGroup();
-//   stave.setClef("treble");
+//   stave.setClef("clef");
 //   stave.setKeySignature(keySig);
 //   // Connect it to the rendering context and draw!
 //   stave.setContext(context).draw();
@@ -145,7 +156,7 @@ function renderKeySignature(keySig, context, group, stave) {
   context.svg.removeChild(group);
   // create new staff
   group = context.openGroup();
-  stave.setClef("treble");
+  stave.setClef(clef);
   stave.setKeySignature(keySig);
   // Connect it to the rendering context and draw!
   stave.setContext(context).draw();
@@ -157,7 +168,7 @@ function renderUserKeySignature(keySig) {
   userContext.svg.removeChild(userGroup);
   // create new staff
   userGroup = userContext.openGroup();
-  userStave.setClef("treble");
+  userStave.setClef(clef);
   userStave.setKeySignature(keySig);
   // Connect it to the rendering context and draw!
   userStave.setContext(userContext).draw();
@@ -168,7 +179,7 @@ function renderAnswerKeySignature(keySig) {
   questionContext.svg.removeChild(questionGroup);
   // create new staff
   questionGroup = questionContext.openGroup();
-  questionStave.setClef("treble");
+  questionStave.setClef(clef);
   questionStave.setKeySignature(keySig);
   // Connect it to the rendering context and draw!
   questionStave.setContext(questionContext).draw();
@@ -186,7 +197,7 @@ function renderQuestionAnsRenderer() {
   questionGroup = questionContext.openGroup();
   // Create a stave of width 400 at position 10, 40 on the canvas.
   questionStave = new Stave(10, 40, 240, { left_bar: false });
-  questionStave.setClef("treble");
+  questionStave.setClef(clef);
   questionStave.setContext(questionContext).draw();
   questionContext.closeGroup();
 }
@@ -201,7 +212,7 @@ function renderUserRenderer() {
   userGroup = userContext.openGroup();
   // Create a stave of width 400 at position 10, 40 on the canvas.
   userStave = new Stave(10, 40, 240, { left_bar: false });
-  userStave.setClef("treble");
+  userStave.setClef(clef);
   userStave.setContext(userContext).draw();
   userContext.closeGroup();
 }
