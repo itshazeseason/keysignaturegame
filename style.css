@@ -7,13 +7,19 @@ h3 {
     display: inline-block;
     margin: 0;
 }
+#roundNum {
+    display: inline-block;
+}
+#accuracy {
+    display: inline-block;
+    margin-left: 20px;
+}
 #selected {
     width: 240px;
     margin: auto;
     /* background-color: cyan; */
     margin-top: 10px;
 }
-
 
 #answer {
     margin: auto;
