@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.noteGlyph{
+  font-family: "Noto Music";
+  font-size: 30px;
+  text-align: center;
+  padding: 8px;
+}
+#noteTable{
+  display:none;
+}
+.tableSemi{
+  letter-spacing: 3cm;
+}
+.tableMin{
+  letter-spacing: 4cm;
+}
+
+.tableCrot{
+  letter-spacing: 2cm;
+}
+
+.tableQuav{
+  letter-spacing: 1cm;
+}
+table{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+thead{
+  background-color: black;
+  color: white;
+}
+th{
+  height: 40px;
+}
+.thCount{
+  width:120px
+}
+
+td {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  font-size: larger;
+}
+
+/* Game */
+.noteQuestion{
+  font-family: "Noto Music";
+  font-size: 30px;
+  text-align: center;
+}
+
+#game1{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+#game2{
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+#row1, #row2{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.gameBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameBox2{
+  display: flex;
+  flex-direction: row;
+  align-items: first baseline;
+}
+.timeValInput{
+  width: 30px;
+  margin: 5px;
+  text-align: center;
+}
+.nameValInput{
+  width: 80px;
+  margin: 5px;
+  text-align: center;
+  bottom: 4px;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: black
+  
+}
+
+.semico{
+  font-size: 20px;
+}
+#game1iconRight1, #game1iconRight2, #game1iconRight3, #game1iconRight4,
+#game2iconRight1, #game2iconRight2, #game2iconRight3, #game2iconRight4
+{
+  display: none;
+}
+#game1iconWrong1, #game1iconWrong2, #game1iconWrong3, #game1iconWrong4,
+#game2iconWrong1, #game2iconWrong2, #game2iconWrong3, #game2iconWrong4
+{
+  display: none;
+}
+
+.correct{
+  color: mediumseagreen;
+  font-size: larger;
+}
+
+.wrong{
+  color:orangered;
+  font-size: larger;
+}
+
+/* #game1Button {
+  position: relative;
+} */
+
+/* Fancy Button */
+.button-1 {
+  background-color: skyblue;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: fit-content;
+  line-height: 20px;
+  margin-top: 20px;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: rgb(168, 212, 230);
+}

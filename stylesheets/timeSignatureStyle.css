@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#roundNum {
+    display: inline-block;
+}
+#accuracy {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#selected {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#choices {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

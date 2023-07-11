@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Time Signature Simple</title> 
+        <link rel="stylesheet" href="../stylesheets/timeSignatureStyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Music&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vexflow@4.0.3/build/cjs/vexflow.js"></script>
+        <script src="../scripts/timeSignatureScript.js"></script>
+    </head>
+
+    <body>
+        <h2 id="roundNum">0/0</h2>
+        <div id="question"></div>
+
+        <br>
+        <h3 id="selected">&nbsp</h3>
+        <br>
+        <div id="choices">
+            <div>
+                <button id="A" onclick="selectChoice(this.id)">A</button>
+                <div id="test"></div>
+                <div id="timeA"></div>
+            </div>
+            <div>
+                <button id="B" onclick="selectChoice(this.id)">B</button>
+                <div id="test"></div>
+                <div id="timeB"></div>
+            </div>
+            <div>
+                <button id="C" onclick="selectChoice(this.id)">C</button>
+                <div id="test"></div>
+                <div id="timeC"></div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <button id="showAns" onclick="showAnswer()">Reveal Answer</button>
+        <button id="submit" onclick="nextRound()">submit</button>
+        <br>
+        <div id="answer"></div>
+    </body>
+</html>

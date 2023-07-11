@@ -1,3 +1,9 @@
+
+
+
+
+
+
 var score = 0;
 var totalTries = 0;
 var accuracy = 0;
@@ -8,7 +14,7 @@ var answerState = "reset";
 // vexflow constants
 const { Renderer, Stave } = Vex.Flow;
 var clef = "treble";
-// variables for user
+// variables for answers
 var userGroup;
 var userStave;
 var userDiv;
@@ -19,67 +25,14 @@ var questionStave;
 var questionDiv;
 var questionContext;
 // key signature and corresponding answer
-const answerKey = {
-  "C Major": "0n",
-  "G Major": "1s",
-  "D Major": "2s",
-  "A Major": "3s",
-  "E Major": "4s",
-  "B Major": "5s",
-  "F# Major": "6s",
-  "C# Major": "7s",
-  "F Major": "1f",
-  "B♭ Major": "2f",
-  "E♭ Major": "3f",
-  "A♭ Major": "4f",
-  "D♭ Major": "5f",
-  "G♭ Major": "6f",
-  "C♭ Major": "7f",
-  "A minor": "0n",
-  "E minor": "1s",
-  "B minor": "2s",
-  "F# minor": "3s",
-  "C# minor": "4s",
-  "G# minor": "5s",
-  "D# minor": "6s",
-  "A# minor": "7s",
-  "D minor": "1f",
-  "G minor": "2f",
-  "C minor": "3f",
-  "F minor": "4f",
-  "B♭ minor": "5f",
-  "E♭ minor": "6f",
-  "A♭ minor": "7f",
-};
-
-const keyToVex = {
-  "0n": "C",
-  "1s": "G",
-  "2s": "D",
-  "3s": "A",
-  "4s": "E",
-  "5s": "B",
-  "6s": "F#",
-  "7s": "C#",
-  "1f": "F",
-  "2f": "Bb",
-  "3f": "Eb",
-  "4f": "Ab",
-  "5f": "Db",
-  "6f": "Gb",
-  "7f": "Cb",
-};
-
 window.onload = function () {
-  renderQuestionAnsRenderer();
-  renderUserRenderer();
-  randomQuestion();
+  renderTest();
 };
 
-function selectKeySig(clicked_id) {
+function selectChoice(clicked_id) {
   console.log(clicked_id);
   // document.getElementById("selected").src = "KeySigImg/" + clicked_id + ".png";
-  renderUserKeySignature(keyToVex[clicked_id]);
+  document.getElementById("selected").innerHTML = clicked_id;
   // renderKeySignature(keyToVex[clicked_id],userContext,userGroup,userStave);
   currentChoice = clicked_id;
 }
@@ -93,6 +46,21 @@ function changeClef(change_clef) {
   console.log(`currentChoice: ${currentChoice}`);
   renderUserKeySignature(keyToVex[currentChoice]);
 }
+
+function renderTest(){
+  testDiv = document.getElementById("test");
+  testRenderer = new Renderer(testDiv, Renderer.Backends.SVG);
+  // Configure the rendering context.
+  testRenderer.resize(40, 160);
+  var testContext = testRenderer.getContext();
+  // group is used so that you can delete the last used staff else it will be stacked
+  var testGroup = testContext.openGroup();
+  var testStave = new Stave(10, 40, 40, { left_bar: false, right_bar:false });
+  testStave.addTimeSignature("4/4")
+  testStave.setContext(testContext).draw();
+  testContext.closeGroup();
+}
+
 
 function randomQuestion() {
   document.getElementById("answer").style.display = "none";

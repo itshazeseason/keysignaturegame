@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Signature Simple</title>
+    <link rel="stylesheet" href="../stylesheets/timeValuesStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Music&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.0.3/build/cjs/vexflow.js"></script>
+    <script src="../scripts/timeValuesScript.js"></script>
+  </head>
+
+  <body>
+    <div id="noteTableDiv">
+      <button class="button-1" onclick="toggleNoteTable()">
+        Note Table Toggle
+      </button>
+      <div id="noteTable">
+        <table>
+          <thead>
+            <th>NAME</th>
+            <th>NOTE CHART</th>
+            <th class="thCount">COUNTS</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>semibreve</td>
+              <td class="noteGlyph">
+                <text class="tableSemi">𝅝</text>
+              </td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>minim</td>
+              <td class="noteGlyph">
+                <text class="tableMin">𝅗𝅥𝅗𝅥</text>
+              </td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>crotchet</td>
+              <td class="noteGlyph">
+                <text class="tableCrot">𝅘𝅥 𝅘𝅥 𝅘𝅥 𝅘𝅥</text>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>quaver</td>
+              <td class="noteGlyph">
+                <text class="tableQuav">𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮 𝅘𝅥𝅮</text>
+              </td>
+              <td>1/2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="game1">
+      <h1>1. Fill in the time values</h1>
+      <div id="row1">
+        <div class="gameBox">
+          <div id="game1question1" class="noteQuestion">𝅗𝅥</div>
+          <div class="ansDiv">
+            <input id="game1ans1" class="timeValInput" />
+            <div id="game1iconRight1">
+              <i class="correct fa-solid fa-circle-check"></i>
+            </div>
+            <div id="game1iconWrong1">
+              <i class="wrong fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gameBox">
+          <div id="game1question2" class="noteQuestion">𝅗𝅥</div>
+          <div class="ansDiv">
+            <input id="game1ans2" class="timeValInput" />
+            <div id="game1iconRight2">
+              <i class="correct fa-solid fa-circle-check"></i>
+            </div>
+            <div id="game1iconWrong2">
+              <i class="wrong fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gameBox">
+          <div id="game1question3" class="noteQuestion">𝅗𝅥</div>
+          <div class="ansDiv">
+            <input id="game1ans3" class="timeValInput" />
+            <div id="game1iconRight3">
+              <i class="correct fa-solid fa-circle-check"></i>
+            </div>
+            <div id="game1iconWrong3">
+              <i class="wrong fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="gameBox">
+          <div id="game1question4" class="noteQuestion">𝅗𝅥</div>
+          <div class="ansDiv">
+            <input id="game1ans4" class="timeValInput" />
+            <div id="game1iconRight4">
+              <i class="correct fa-solid fa-circle-check"></i>
+            </div>
+            <div id="game1iconWrong4">
+              <i class="wrong fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="game1Buttons">
+        <div id="submit1">
+          <button class="button-1" onclick="submitAns()">Check Answer</button>
+        </div>
+      </div>
+    </div>
+    <div id="game2">
+      <h1>2. Name the notes</h1>
+      <div class="gameBox2">
+        <div id="game2question1" class="noteQuestion">𝅗𝅥</div>
+        <div class="semico">:</div>
+        <div class="ansDiv2">
+          <input id="game2ans1" class="nameValInput" />
+        </div>
+        <div id="game2iconRight1">
+          <i class="correct fa-solid fa-circle-check"></i>
+        </div>
+        <div id="game2iconWrong1">
+          <i class="wrong fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="gameBox2">
+        <div id="game2question2" class="noteQuestion">𝅗𝅥</div>
+        <div class="semico">:</div>
+        <div class="ansDiv2">
+          <input id="game2ans2" class="nameValInput" />
+        </div>
+        <div id="game2iconRight2">
+          <i class="correct fa-solid fa-circle-check"></i>
+        </div>
+        <div id="game2iconWrong2">
+          <i class="wrong fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="gameBox2">
+        <div id="game2question3" class="noteQuestion">𝅗𝅥</div>
+        <div class="semico">:</div>
+        <div class="ansDiv2">
+          <input id="game2ans3" class="nameValInput" />
+        </div>
+        <div id="game2iconRight3">
+          <i class="correct fa-solid fa-circle-check"></i>
+        </div>
+        <div id="game2iconWrong3">
+          <i class="wrong fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div class="gameBox2">
+        <div id="game2question4" class="noteQuestion">𝅗𝅥</div>
+        <div class="semico">:</div>
+        <div class="ansDiv2">
+          <input id="game2ans4" class="nameValInput" />
+        </div>
+        <div id="game2iconRight4">
+          <i class="correct fa-solid fa-circle-check"></i>
+        </div>
+        <div id="game2iconWrong4">
+          <i class="wrong fa-solid fa-circle-xmark"></i>
+        </div>
+      </div>
+      <div id="game2Buttons">
+        <div id="submit2">
+          <button class="button-1" onclick="submitAns2()">Check Answer</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
